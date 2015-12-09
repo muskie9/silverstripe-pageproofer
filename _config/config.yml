@@ -1,0 +1,9 @@
+---
+Name: silverstripepageprooferconfig
+---
+SiteConfig:
+  extensions:
+    - PageProoferConfig
+ContentController:
+  extensions:
+    - PageProofer
