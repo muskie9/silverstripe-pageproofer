@@ -35,5 +35,4 @@ class PageProoferConfig extends DataExtension
             return $code->getIsActiveCode();
         })->first();
     }
-
 }
