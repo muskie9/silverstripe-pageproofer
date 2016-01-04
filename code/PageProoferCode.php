@@ -51,7 +51,6 @@ class PageProoferCode extends DataObject
      */
     public function getCMSFields()
     {
-
         $fields = FieldList::create(
             new TabSet(
                 $name = "Root"
@@ -74,7 +73,6 @@ class PageProoferCode extends DataObject
         );
 
         return $fields;
-
     }
 
     /**
@@ -97,7 +95,6 @@ class PageProoferCode extends DataObject
         }
 
         return $result;
-
     }
 
     /**
@@ -105,10 +102,8 @@ class PageProoferCode extends DataObject
      */
     public function getIsActiveCode()
     {
-
-        $domain = preg_replace('#^https?://#', '', rtrim($this->Domain,'/'));
-        $currentSite = preg_replace('#^https?://#', '', rtrim(Director::absoluteBaseURL(),'/'));
+        $domain = preg_replace('#^https?://#', '', rtrim($this->Domain, '/'));
+        $currentSite = preg_replace('#^https?://#', '', rtrim(Director::absoluteBaseURL(), '/'));
         return ($domain == $currentSite && $this->Enabled);
     }
-
 }
