@@ -106,4 +106,18 @@ class PageProoferCode extends DataObject
         $currentSite = preg_replace('#^https?://#', '', rtrim(Director::absoluteBaseURL(), '/'));
         return ($domain == $currentSite && $this->Enabled);
     }
+
+    /**
+     * returns a PageProoferCode based on a given code
+     *
+     * @param string|null $code
+     * @return bool|PageProoferCode
+     */
+    public static function get_by_code($code = null)
+    {
+        if ($code === null) {
+            return false;
+        }
+        return PageProoferCode::get()->filter('Code', $code)->first();
+    }
 }

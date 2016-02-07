@@ -17,7 +17,6 @@ class PageProofer extends Extension
             ));
 
             Requirements::customScript($data->renderWith('PageProofer'));
-            ;
         }
     }
 }

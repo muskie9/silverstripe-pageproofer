@@ -1,0 +1,60 @@
+language: php
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - tidy
+
+php:
+  - 5.4
+
+before_install:
+  - pip install --user codecov
+
+env:
+  global:
+    - DB=MYSQL CORE_RELEASE=3.2
+    - MODULE_PATH=pageproofer
+    - COVERAGE=0
+
+matrix:
+  allow_failures:
+    - php: hhvm-nightly
+    - php: 7.0
+  include:
+    - php: 5.6
+      env: DB=MYSQL COVERAGE=1
+    - php: 5.6
+      env: DB=PGSQL
+    - php: 5.6
+      env: DB=SQLITE
+    - php: hhvm
+      env: DB=MYSQL
+    - php: 5.5
+      env: DB=MYSQL
+    - php: 5.3
+      env: DB=MYSQL
+    - php: hhvm-nightly
+      env: DB=MYSQL
+
+
+before_script:
+  - phpenv rehash
+  - composer self-update || true
+  - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
+  - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
+  - cd ~/builds/ss
+
+script:
+  # Execute tests with no coverage.  This is the fastest option
+  - "if [ \"$COVERAGE\" = \"0\" ]; then vendor/bin/phpunit $MODULE_PATH/tests/; fi"
+
+  # Execute tests with coverage.  Do this for a small
+  - "if [ \"$COVERAGE\" = \"1\" ]; then vendor/bin/phpunit --coverage-clover=coverage.clover $MODULE_PATH/tests/; fi"
+
+after_script:
+  - "if [ \"$COVERAGE\" = \"1\" ]; then mv coverage.clover ~/build/$TRAVIS_REPO_SLUG/; fi"
+  - cd ~/build/$TRAVIS_REPO_SLUG
+  - codecov
