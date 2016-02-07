@@ -57,4 +57,4 @@ script:
 after_script:
   - "if [ \"$COVERAGE\" = \"1\" ]; then mv coverage.clover ~/build/$TRAVIS_REPO_SLUG/; fi"
   - cd ~/build/$TRAVIS_REPO_SLUG
-  - codecov
+  - bash <(curl -s https://codecov.io/bash?branch=1.0)
