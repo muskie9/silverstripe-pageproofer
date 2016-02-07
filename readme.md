@@ -19,10 +19,6 @@ Add PageProofer code snippet to websites via cms.
 
 `http://yoursite.com/dev/build?flush=all`
 
-## Example usage
-
-You use silverstripe-pageproofer like this.
-
 ## Documentation
 
 See the [docs/en](docs/en/index.md) folder.
