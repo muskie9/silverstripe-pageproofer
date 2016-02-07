@@ -33,4 +33,59 @@ class PageProoferCode_Test extends PP_Test
         $this->assertTrue($code2->getIsActiveCode());
     }
 
+    /**
+     * Test that PageProoferCode has all fields intended
+     */
+    public function testPageProoferCodeFields()
+    {
+
+        $pageProoferCodeFields = singleton('PageProoferCode');
+        $fields = $pageProoferCodeFields->getCMSFields();
+
+        $this->assertInstanceOf('TextField', $fields->fieldByName('Root.Main.Title'));
+        $this->assertInstanceOf('TextField', $fields->fieldByName('Root.Main.Code'));
+        $this->assertInstanceOf('TextField', $fields->fieldByName('Root.Main.Domain'));
+        $this->assertInstanceOf('CheckboxField', $fields->fieldByName('Root.Main.Enabled'));
+
+    }
+
+    /**
+     * Test for ValidationException if no Title
+     */
+    public function testNoTitleValidation()
+    {
+        $code1 = PageProoferCode::create();
+        $code1->Code = '12345345';
+        $code1->Domain = 'http://muskie9.com/';
+        $code1->Enabled = true;
+        $this->setExpectedException('ValidationException');
+        $code1->write();
+    }
+
+    /**
+     * Test for ValidationException if no Code
+     */
+    public function testNoCodeValidation()
+    {
+        $code1 = PageProoferCode::create();
+        $code1->Title = 'Test Code';
+        $code1->Domain = 'http://muskie9.com/';
+        $code1->Enabled = true;
+        $this->setExpectedException('ValidationException');
+        $code1->write();
+    }
+
+    /**
+     * Test for ValidationException if no Domain
+     */
+    public function testNoDomainValidation()
+    {
+        $code1 = PageProoferCode::create();
+        $code1->Title = 'Test Code';
+        $code1->Code = '12345345';
+        $code1->Enabled = true;
+        $this->setExpectedException('ValidationException');
+        $code1->write();
+    }
+
 }
