@@ -6,11 +6,18 @@ Add PageProofer code snippet to websites via cms.
 
 ## Requirements
 
-- SilverStripe 3.2
+- [cms 3.2.x](https://github.com/silverstripe/silverstripe-cms)
+- [framework 3.2.x](https://github.com/silverstripe/silverstripe-framework)
 
 ## Installation
 
-This is how you install silverstripe-pageproofer.
+**First:**
+
+`composer require muskie9/pageproofer`
+
+**Then:**
+
+`http://yoursite.com/dev/build?flush=all`
 
 ## Example usage
 
