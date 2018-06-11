@@ -1,13 +1,17 @@
 # silverstripe-pageproofer
 
-[![Build Status](https://travis-ci.org/muskie9/silverstripe-pageproofer.svg?branch=master)](https://travis-ci.org/muskie9/silverstripe-pageproofer) [![codecov.io](https://codecov.io/github/muskie9/silverstripe-pageproofer/coverage.svg?branch=master)](https://codecov.io/github/muskie9/silverstripe-pageproofer?branch=master)
+[![Build Status](https://travis-ci.org/muskie9/silverstripe-pageproofer.svg?branch=master)](https://travis-ci.org/muskie9/silverstripe-pageproofer) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/muskie9/silverstripe-pageproofer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/muskie9/silverstripe-pageproofer/?branch=master) [![codecov.io](https://codecov.io/github/muskie9/silverstripe-pageproofer/coverage.svg?branch=master)](https://codecov.io/github/muskie9/silverstripe-pageproofer?branch=master)
+
+[![Latest Stable Version](https://poser.pugx.org/muskie9/pageproofer/v/stable)](https://packagist.org/packages/muskie9/pageproofer)
+[![Total Downloads](https://poser.pugx.org/muskie9/pageproofer/downloads)](https://packagist.org/packages/muskie9/pageproofer)
+[![Latest Unstable Version](https://poser.pugx.org/muskie9/pageproofer/v/unstable)](https://packagist.org/packages/muskie9/pageproofer)
+[![License](https://poser.pugx.org/muskie9/pageproofer/license)](https://packagist.org/packages/muskie9/pageproofer)
 
 Add PageProofer code snippet to websites via cms.
 
 ## Requirements
 
-- [cms 3.2.x](https://github.com/silverstripe/silverstripe-cms)
-- [framework 3.2.x](https://github.com/silverstripe/silverstripe-framework)
+- [`"silverstripe/recipe-cms": "^1.0"`](https://packagist.org/packages/silverstripe/recipe-cms)
 
 ## Installation
 
