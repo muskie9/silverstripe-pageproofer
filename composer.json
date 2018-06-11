@@ -1,37 +1,43 @@
 {
-  "name": "muskie9/pageproofer",
-  "description": "Add PageProofer code snippet to websites via cms.",
-  "authors": [
-    {
-      "name": "Nic Horstmeier",
-      "email": "nhorstmeier@gmail.com",
-      "homepage": "http://muskie9.com",
-      "role": "Developer"
-    }
-  ],
-  "keywords": [
-    "silverstripe",
-    "PageProofer"
-  ],
-  "type": "silverstripe-vendormodule",
-  "license": "BSD-3-Clause",
-  "require": {
-    "silverstripe/recipe-cms": "^1.0",
-    "silverstripe/vendor-plugin": "^1.0"
-  },
-  "extra": {
-    "installer-name": "pageproofer",
-    "branch-alias": {
-      "dev-master": "2.0.x-dev"
-    }
-  },
-  "require-dev": {
-    "phpunit/PHPUnit": "^5.7",
-    "squizlabs/php_codesniffer": "*"
-  },
-  "config": {
-    "process-timeout": 600
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "muskie9/pageproofer",
+    "description": "Add PageProofer code snippet to websites via cms.",
+    "authors": [
+        {
+            "name": "Nic Horstmeier",
+            "email": "nhorstmeier@gmail.com",
+            "homepage": "http://muskie9.com",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "silverstripe",
+        "PageProofer"
+    ],
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "require": {
+        "silverstripe/recipe-cms": "^1.0",
+        "silverstripe/vendor-plugin": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Muskie9\\PageProofer\\": "src",
+            "Muskie9\\PageProofer\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "installer-name": "pageproofer",
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    },
+    "require-dev": {
+        "phpunit/PHPUnit": "^5.7",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "config": {
+        "process-timeout": 600
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

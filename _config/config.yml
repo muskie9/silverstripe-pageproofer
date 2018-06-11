@@ -1,9 +1,9 @@
 ---
 Name: silverstripepageprooferconfig
 ---
-SiteConfig:
+SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - PageProoferConfig
-ContentController:
+    - Muskie9\PageProofer\Extensions\PageProoferConfig
+SilverStripe\CMS\Controllers\ContentController:
   extensions:
-    - PageProofer
+    - Muskie9\PageProofer\Extensions\PageProofer
