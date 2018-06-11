@@ -20,7 +20,7 @@
     "silverstripe/vendor-plugin": "^1.0"
   },
   "extra": {
-    "installer-name": "pageproofer"
+    "installer-name": "pageproofer",
     "branch-alias": {
       "dev-master": "2.0.x-dev"
     }
