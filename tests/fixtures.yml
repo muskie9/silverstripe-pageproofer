@@ -1,0 +1,36 @@
+SilverStripe\Security\Group:
+  administrators:
+    Title: Administrators
+  site-owners:
+    Title: "Site Owners"
+SilverStripe\Security\Permission:
+  administrators:
+    Code: ADMIN
+    Type: 1
+    Group: =>SilverStripe\Security\Group.administrators
+  manager:
+    Code: 'PageProofer_MANAGE'
+    Type: 1
+    Group: =>SilverStripe\Security\Group.site-owners
+SilverStripe\Security\Member:
+  admin:
+    FirstName: Default
+    Surname: Admin
+    Email: admin@dynamicagency.com
+    Groups: =>SilverStripe\Security\Group.administrators
+  site-owner:
+    FirstName: "Site"
+    Surname: "Owner"
+    Email: "owner"
+    Password: "owner"
+    Groups: =>SilverStripe\Security\Group.site-owners
+  default:
+    FirstName: Default
+    Surname: User
+    Email: user@dynamicagency.com
+Muskie9\PageProofer\Model\PageProoferCode:
+  one:
+    Title: Test Code 1
+    Code: 12345345
+    Domain: 'http://muskie9.com'
+    Enabled: true

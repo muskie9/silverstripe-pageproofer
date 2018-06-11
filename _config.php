@@ -1,4 +1,0 @@
-<?php
-
-define('SILVERSTRIPE_PAGEPROOFER_PATH', __DIR__);
-define('SILVERSTRIPE_PAGEPROOFER_DIR', basename(__DIR__));
